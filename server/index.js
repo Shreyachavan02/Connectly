@@ -1,34 +1,23 @@
-import express from "express";
-import cors from "cors";
-import dotenv from "dotenv";
-import mongoose from "mongoose";
+import express from 'express';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+import cors from 'cors';
+import contactRoutes from './routes/contactRoutes.js';
 
 dotenv.config();
 
 const app = express();
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 
-let requestCount = 0;
+app.use('/api/contacts', contactRoutes);
 
-const connectDB = async () => {
-  try {
-    const conn = await mongoose.connect(process.env.MONGODB_URI);
-    console.log("MongoDB connected successfully:", conn.connection.host);
-  } catch (error) {
-    console.error("Error connecting to MongoDB:", error);
-  }
-};
-
-app.get("/", (req, res) => {
-  res.json({
-    success: true,
-    message: "Welcome to the Connectly API!",
-  });
-});
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log('MongoDB connected'))
+.catch(err => console.log('MongoDB connection error:', err));
 
 const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-  connectDB();
-});
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
