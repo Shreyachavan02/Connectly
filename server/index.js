@@ -14,7 +14,7 @@ let requestCount = 0;
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.mongodb+srv:shreyaicp:shreya02@shreya-cluster.fnyiiwb.mongodb.net/Connectly);
+    const conn = await mongoose.connect(process.env.MONGODB_URL);
     if (conn) {
       console.log("MongoDB connected successfully");
     }
