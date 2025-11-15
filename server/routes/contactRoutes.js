@@ -3,8 +3,8 @@ import { getContacts, addContact, deleteContact } from '../controllers/contactCo
 
 const router = express.Router();
 
+router.get('/', getContacts);         
+router.post('/', addContact);         
+router.delete('/:id', deleteContact); 
 
-router.get('/', getContacts);
-router.post('/', addContact);
-router.delete('/:id', deleteContact);
 export default router;
