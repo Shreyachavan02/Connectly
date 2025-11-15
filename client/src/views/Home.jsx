@@ -5,7 +5,7 @@ import ContactForm from '../components/ContactForm';
 import ContactList from '../components/ContactList';
 
 
-const API_URL = 'https://connectlyapi.onrender.com/contacts';
+const API_URL = 'https://connectlyapi.onrender.com/api/contacts';
 
 const Home = () => {
     const [contacts, setContacts] = useState([]);
