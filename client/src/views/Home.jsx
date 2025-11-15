@@ -10,7 +10,7 @@ const Home = () => {
 
     const fetchContacts = async () => {
         try {
-            const res = await axios.get('http://localhost:8080/api/contacts');
+            const res = await axios.get('https://connectlyapi.onrender.com');
             setContacts(res.data);
         } catch (err) {
             console.error(err);
@@ -25,7 +25,7 @@ const Home = () => {
 
     const addContact = async (contact) => {
         try {
-            const res = await axios.post('http://localhost:8080/api/contacts', contact);
+            const res = await axios.post('https://connectlyapi.onrender.com', contact);
             setContacts([...contacts, res.data]);
             toast.success('Contact saved!');
         } catch (err) {
@@ -37,7 +37,7 @@ const Home = () => {
 
     const deleteContact = async (id) => {
         try {
-            await axios.delete(`http://localhost:8080/api/contacts/${id}`);
+            await axios.delete(`https://connectlyapi.onrender.com/${id}`);
             setContacts(contacts.filter(c => c._id !== id));
             toast.success('Contact deleted!');
         } catch (err) {
