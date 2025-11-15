@@ -1,11 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
+  const linkStyle = {
+    color: "white",
+    textDecoration: "none",
+    fontWeight: "500",
+    padding: "8px 14px",
+    borderRadius: "6px",
+    transition: "0.3s ease",
+    fontSize: "1rem",
+  };
+
   return (
     <nav
       style={{
-        background: "linear-gradient(90deg, #ff4f9a, #ff77c8)",
+        background: "linear-gradient(90deg, #ff3d95, #ff6fc7)",
         padding: "15px 30px",
         display: "flex",
         justifyContent: "space-between",
@@ -16,52 +26,48 @@ const Navbar = () => {
         zIndex: 1000,
       }}
     >
-      {/* Logo / Brand */}
+      {/* Brand Name */}
       <h1
         style={{
           color: "white",
-          fontWeight: "700",
-          letterSpacing: "1px",
+          fontWeight: "800",
+          letterSpacing: "1.5px",
           margin: 0,
-          fontSize: "1.4rem",
+          fontSize: "1.7rem",
+          textShadow: "0 0 8px rgba(255,255,255,0.4)",
+          cursor: "pointer",
         }}
       >
-        Connectly
+        Connectly💌
       </h1>
 
-      {/* Links */}
+      {/* Navigation Links */}
       <div style={{ display: "flex", gap: "20px" }}>
-        <Link
+        <NavLink
           to="/"
-          style={{
-            color: "white",
-            textDecoration: "none",
-            fontWeight: "500",
-            padding: "6px 12px",
-            borderRadius: "6px",
-            transition: "0.3s",
-          }}
-          onMouseOver={(e) => (e.target.style.background = "rgba(255,255,255,0.3)")}
-          onMouseOut={(e) => (e.target.style.background = "transparent")}
+          style={({ isActive }) => ({
+            ...linkStyle,
+            background: isActive ? "rgba(255,255,255,0.35)" : "transparent",
+            color: isActive ? "#fff" : "white",
+          })}
+          onMouseEnter={(e) => (e.target.style.background = "rgba(255,255,255,0.35)")}
+          onMouseLeave={(e) => (e.target.style.background = "transparent")}
         >
           Home
-        </Link>
+        </NavLink>
 
-        <Link
+        <NavLink
           to="/about"
-          style={{
-            color: "white",
-            textDecoration: "none",
-            fontWeight: "500",
-            padding: "6px 12px",
-            borderRadius: "6px",
-            transition: "0.3s",
-          }}
-          onMouseOver={(e) => (e.target.style.background = "rgba(255,255,255,0.3)")}
-          onMouseOut={(e) => (e.target.style.background = "transparent")}
+          style={({ isActive }) => ({
+            ...linkStyle,
+            background: isActive ? "rgba(255,255,255,0.35)" : "transparent",
+            color: isActive ? "#fff" : "white",
+          })}
+          onMouseEnter={(e) => (e.target.style.background = "rgba(255,255,255,0.35)")}
+          onMouseLeave={(e) => (e.target.style.background = "transparent")}
         >
           About
-        </Link>
+        </NavLink>
       </div>
     </nav>
   );

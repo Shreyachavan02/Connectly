@@ -49,7 +49,7 @@ const Home = () => {
   return (
     <div className="container">
       <Toaster position="top-right" />
-      <h1>Connectly Contacts</h1>
+      <h1>Connectly Contacts📞</h1>
       <ContactForm addContact={addContact} />
       <ContactList contacts={contacts} deleteContact={deleteContact} />
     </div>
