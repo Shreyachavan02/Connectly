@@ -4,16 +4,19 @@ import { Toaster, toast } from 'react-hot-toast';
 import ContactForm from '../components/ContactForm';
 import ContactList from '../components/ContactList';
 
+
+const API_URL = 'https://connectlyapi.onrender.com/contacts';
+
 const Home = () => {
     const [contacts, setContacts] = useState([]);
 
 
     const fetchContacts = async () => {
         try {
-            const res = await axios.get('https://connectlyapi.onrender.com');
+            const res = await axios.get(API_URL);
             setContacts(res.data);
         } catch (err) {
-            console.error(err);
+            console.error('Error fetching contacts:', err);
             toast.error('Failed to fetch contacts');
         }
     };
@@ -22,14 +25,14 @@ const Home = () => {
         fetchContacts();
     }, []);
 
-
+   
     const addContact = async (contact) => {
         try {
-            const res = await axios.post('https://connectlyapi.onrender.com', contact);
+            const res = await axios.post(API_URL, contact);
             setContacts([...contacts, res.data]);
             toast.success('Contact saved!');
         } catch (err) {
-            console.error(err);
+            console.error('Error saving contact:', err);
             toast.error('Failed to save contact');
         }
     };
@@ -37,11 +40,11 @@ const Home = () => {
 
     const deleteContact = async (id) => {
         try {
-            await axios.delete(`https://connectlyapi.onrender.com/${id}`);
+            await axios.delete(`${API_URL}/${id}`);
             setContacts(contacts.filter(c => c._id !== id));
             toast.success('Contact deleted!');
         } catch (err) {
-            console.error(err);
+            console.error('Error deleting contact:', err);
             toast.error('Failed to delete contact');
         }
     };
@@ -49,7 +52,7 @@ const Home = () => {
     return (
         <div className="container">
             <Toaster position="top-right" />
-            <h1>Connectly Contacts📞</h1>
+            <h1>Connectly Contacts 📞</h1>
             <ContactForm addContact={addContact} />
             <ContactList contacts={contacts} deleteContact={deleteContact} />
         </div>
