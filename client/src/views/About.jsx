@@ -52,7 +52,7 @@ const About = () => {
 
       <div className="about-wrapper">
         <div className="about-card">
-          <h1 className="about-title">About Connectly</h1>
+          <h1 className="about-title">About Us</h1>
 
           <p className="about-text">
             Connectly is a simple and modern <span className="highlight">Contact Management App</span> 
