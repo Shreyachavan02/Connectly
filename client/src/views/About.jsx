@@ -1,10 +1,10 @@
 import React from "react";
 
 const About = () => {
-  return (
-    <div>
-      {/* Inline CSS */}
-      <style>{`
+    return (
+        <div>
+
+            <style>{`
         .about-wrapper {
           min-height: 80vh;
           display: flex;
@@ -50,28 +50,28 @@ const About = () => {
         }
       `}</style>
 
-      <div className="about-wrapper">
-        <div className="about-card">
-          <h1 className="about-title">About Us</h1>
+            <div className="about-wrapper">
+                <div className="about-card">
+                    <h1 className="about-title">About Us</h1>
 
-          <p className="about-text">
-            Connectly is a simple and modern <span className="highlight">Contact Management App</span> 
-            built using the powerful <span className="highlight">MERN Stack</span>.
-          </p>
+                    <p className="about-text">
+                        Connectly is a simple and modern <span className="highlight">Contact Management App</span>
+                        built using the powerful <span className="highlight">MERN Stack</span>.
+                    </p>
 
-          <p className="about-text">
-            It allows you to easily add, view, and manage your contacts with a 
-            clean and minimal UI inspired by soft pink and lavender gradients.
-          </p>
+                    <p className="about-text">
+                        It allows you to easily add, view, and manage your contacts with a
+                        clean and minimal UI inspired by soft pink and lavender gradients.
+                    </p>
 
-          <p className="about-text">
-            This project helps beginners learn how frontend and backend work together — 
-            including API handling, database connections, and UI/UX.
-          </p>
+                    <p className="about-text">
+                        This project helps beginners learn how frontend and backend work together —
+                        including API handling, database connections, and UI/UX.
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default About;

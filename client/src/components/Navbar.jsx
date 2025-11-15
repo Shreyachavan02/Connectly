@@ -26,7 +26,7 @@ const Navbar = () => {
         zIndex: 1000,
       }}
     >
-      {/* Brand Name */}
+      
       <h1
         style={{
           color: "white",
@@ -41,7 +41,6 @@ const Navbar = () => {
         Connectly💌
       </h1>
 
-      {/* Navigation Links */}
       <div style={{ display: "flex", gap: "20px" }}>
         <NavLink
           to="/"
