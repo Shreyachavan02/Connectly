@@ -44,13 +44,17 @@ nav a:hover {
 
 /* ================= Footer ================= */
 footer {
-  background-color: #ff4da6; /* vibrant pink footer */
+  background-color: #ff4da6;
   color: #fff;
   padding: 12px;
   text-align: center;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
-  margin-top: auto; 
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
 /* ================= Headings ================= */
