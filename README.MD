@@ -13,7 +13,7 @@ Connectly is a modern contact management application designed to help users orga
 
 ---
 
-## Tech Stack
+## Tech Stack📌
 
 - **Frontend**: React.js, HTML5, CSS3
 - **Backend**: Node.js, Express.js
